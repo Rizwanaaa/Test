@@ -1,0 +1,7 @@
+influx < this will show db prompt then run below commands
+
+
+CREATE DATABASE jenkins_db
+
+
+CREATE USER jenkins WITH PASSWORD 'admin' WITH ALL PRIVILEGES
