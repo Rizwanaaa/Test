@@ -1,29 +1,25 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  generation: 1
   labels:
     app: influxdb
-    release: influxdb
   name: influxdb
-  namespace: influxdb
+  namespace: k8s-dev-jenk-xeua
 spec:
   podManagementPolicy: OrderedReady
   replicas: 1
   selector:
     matchLabels:
       app: influxdb
-      release: influxdb
   serviceName: influxdb
   template:
     metadata:
       creationTimestamp: null
       labels:
         app: influxdb
-        release: influxdb
     spec:
       containers:
-      - image: influxdb:1.7.6-alpine
+      - image: artifactory.tfs.toyota.com/ids-docker-prod-local/influxdb:1.7.6-alpine
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
@@ -81,8 +77,6 @@ spec:
       - ReadWriteOnce
       resources:
         requests:
-          storage: 100Gi
+          storage: 10Gi
       storageClassName: influxdb
       volumeMode: Filesystem
-    status:
-      phase: Pending
