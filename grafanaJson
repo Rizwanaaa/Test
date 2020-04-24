@@ -17,47 +17,179 @@
   "gnetId": 10557,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1587561858074,
+  "iteration": 1587731778938,
   "links": [],
   "panels": [
     {
-      "aliasColors": {
-        "Failed": "#f53636",
-        "Interruped": "#ed8128",
-        "Passed": "#32ac2d"
-      },
-      "breakPoint": "50%",
       "cacheTimeout": null,
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
       "datasource": "InfluxDB",
-      "fontSize": "80%",
-      "format": "short",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
       "gridPos": {
-        "h": 8,
-        "w": 7,
+        "h": 4,
+        "w": 3,
         "x": 0,
         "y": 0
       },
-      "id": 11,
+      "id": 37,
       "interval": null,
-      "legend": {
-        "percentage": true,
-        "show": false,
-        "values": true
-      },
-      "legendType": "Under graph",
       "links": [],
-      "maxDataPoints": 3,
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
       "nullPointMode": "connected",
+      "nullText": null,
       "options": {},
-      "pieType": "pie",
-      "strokeWidth": 1,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
       "targets": [
         {
-          "alias": "Passed",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "project_name"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total Job",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "InfluxDB",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 3,
+        "y": 0
+      },
+      "id": 27,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
           "groupBy": [],
           "measurement": "jenkins_data",
           "orderByTime": "ASC",
@@ -78,50 +210,23 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "build_result",
-              "operator": "=",
-              "value": "SUCCESS"
-            }
-          ]
-        },
-        {
-          "alias": "Failed",
-          "groupBy": [],
-          "measurement": "jenkins_data",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "build_time"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "count"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "build_result",
-              "operator": "=",
-              "value": "FAILURE"
-            }
-          ]
+          "tags": []
         }
       ],
+      "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Overall",
-      "type": "grafana-piechart-panel",
-      "valueName": "total"
+      "title": "Total Build",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
     },
     {
       "cacheTimeout": null,
@@ -143,8 +248,8 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 5,
-        "x": 7,
+        "w": 4,
+        "x": 6,
         "y": 0
       },
       "id": 2,
@@ -217,7 +322,7 @@
         }
       ],
       "thresholds": "",
-      "title": "Total Build",
+      "title": "Total Build For Selected Job",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -238,8 +343,8 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "InfluxDB",
-      "format": "s",
+      "datasource": null,
+      "format": "none",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -249,11 +354,11 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 5,
-        "x": 12,
+        "w": 4,
+        "x": 10,
         "y": 0
       },
-      "id": 4,
+      "id": 35,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -286,7 +391,9 @@
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
         "lineColor": "rgb(31, 120, 193)",
-        "show": false
+        "show": false,
+        "ymax": null,
+        "ymin": null
       },
       "tableColumn": "",
       "targets": [
@@ -301,15 +408,13 @@
             [
               {
                 "params": [
-                  "build_time"
+                  "build_number"
                 ],
                 "type": "field"
               },
               {
-                "params": [
-                  " / 1000"
-                ],
-                "type": "math"
+                "params": [],
+                "type": "last"
               }
             ]
           ],
@@ -318,12 +423,20 @@
               "key": "project_path",
               "operator": "=~",
               "value": "/^$folder$/"
+            },
+            {
+              "condition": "AND",
+              "key": "build_result",
+              "operator": "=",
+              "value": "SUCCESS"
             }
           ]
         }
       ],
       "thresholds": "",
-      "title": "Avg Build Duration",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Last Successful Build",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -334,156 +447,6 @@
         }
       ],
       "valueName": "avg"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": "InfluxDB",
-      "gridPos": {
-        "h": 4,
-        "w": 7,
-        "x": 17,
-        "y": 0
-      },
-      "id": 18,
-      "links": [],
-      "options": {
-        "displayMode": "lcd",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "decimals": 2,
-            "mappings": [],
-            "max": 1,
-            "min": 0,
-            "thresholds": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ],
-            "title": "",
-            "unit": "percentunit"
-          },
-          "override": {},
-          "values": false
-        },
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.5.2",
-      "targets": [
-        {
-          "alias": "Total",
-          "groupBy": [],
-          "measurement": "jenkins_data",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "tests_total"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "project_path",
-              "operator": "=~",
-              "value": "/^$folder$/"
-            }
-          ]
-        },
-        {
-          "alias": "Skipped",
-          "groupBy": [],
-          "measurement": "jenkins_data",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "tests_skipped"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  " / (tests_failed+test_total+tests_skipped)"
-                ],
-                "type": "math"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "project_path",
-              "operator": "=~",
-              "value": "/^$folder$/"
-            }
-          ]
-        },
-        {
-          "alias": "Failed",
-          "groupBy": [],
-          "measurement": "jenkins_data",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "C",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "tests_failed"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  " / (tests_failed+test_total+tests_skipped)"
-                ],
-                "type": "math"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "project_path",
-              "operator": "=~",
-              "value": "/^$folder$/"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Latest Unit Test Result",
-      "type": "bargauge"
     },
     {
       "cacheTimeout": null,
@@ -508,8 +471,8 @@
       "gridPos": {
         "h": 4,
         "w": 5,
-        "x": 7,
-        "y": 4
+        "x": 14,
+        "y": 0
       },
       "id": 9,
       "interval": null,
@@ -585,7 +548,7 @@
         }
       ],
       "thresholds": "0.5,2",
-      "title": "Latest Build",
+      "title": "Latest Build Status For Selected Job",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -603,24 +566,67 @@
       "valueName": "current"
     },
     {
-      "datasource": "InfluxDB",
-      "decimals": 2,
-      "defaultColor": "rgb(117, 117, 117)",
-      "description": "This graph shows the percentage change of build duration between the latest run and the first one. The graph will be green if value <= 0; yellow if 0 < value <= 25; and red if value > 25",
-      "displayValue": "value",
-      "format": "ms",
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#C4162A"
+      ],
+      "datasource": null,
+      "format": "s",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
       "gridPos": {
         "h": 4,
         "w": 5,
-        "x": 12,
-        "y": 4
+        "x": 19,
+        "y": 0
       },
-      "id": 16,
-      "linkIndex": "0",
+      "id": 33,
+      "interval": null,
       "links": [],
-      "numberSize": "14px",
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
       "options": {},
-      "percentSize": "30px",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
       "targets": [
         {
           "groupBy": [],
@@ -636,6 +642,16 @@
                   "build_time"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  " / 1000"
+                ],
+                "type": "math"
               }
             ]
           ],
@@ -648,34 +664,581 @@
           ]
         }
       ],
-      "thresholds": [
+      "thresholds": "3,4",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Latest Build Duration For Selected Job",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
         {
-          "color": "#f53636",
-          "value": "25"
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "aliasColors": {
+        "Failed": "#f53636",
+        "Interruped": "#ed8128",
+        "Passed": "#32ac2d"
+      },
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "datasource": "InfluxDB",
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 4
+      },
+      "id": 31,
+      "interval": null,
+      "legend": {
+        "percentage": true,
+        "show": true,
+        "values": true
+      },
+      "legendType": "Under graph",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "options": {},
+      "pieType": "pie",
+      "strokeWidth": 1,
+      "targets": [
+        {
+          "alias": "Passed",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "build_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/^$folder$/"
+            },
+            {
+              "condition": "AND",
+              "key": "build_result",
+              "operator": "=",
+              "value": "SUCCESS"
+            }
+          ]
         },
         {
-          "color": "#ed8128",
-          "value": "1"
-        },
-        {
-          "color": "#32ac2d",
-          "value": "-100"
+          "alias": "Failed",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "build_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/^$folder$/"
+            },
+            {
+              "condition": "AND",
+              "key": "build_result",
+              "operator": "=",
+              "value": "FAILURE"
+            }
+          ]
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Duration Trend",
-      "titleSize": "13px",
-      "type": "btplc-trend-box-panel"
+      "title": "Build Status For Selected Job",
+      "type": "grafana-piechart-panel",
+      "valueName": "total"
+    },
+    {
+      "aliasColors": {
+        "Failed": "#f53636",
+        "Interruped": "#ed8128",
+        "Passed": "#32ac2d"
+      },
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "datasource": "InfluxDB",
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 4
+      },
+      "id": 11,
+      "interval": null,
+      "legend": {
+        "percentage": true,
+        "show": true,
+        "values": true
+      },
+      "legendType": "Under graph",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "options": {},
+      "pieType": "pie",
+      "strokeWidth": 1,
+      "targets": [
+        {
+          "alias": "Passed",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "build_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "build_result",
+              "operator": "=",
+              "value": "SUCCESS"
+            }
+          ]
+        },
+        {
+          "alias": "Failed",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "build_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "build_result",
+              "operator": "=",
+              "value": "FAILURE"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Overall Build Status",
+      "type": "grafana-piechart-panel",
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "columns": [],
+      "datasource": null,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 12,
+        "y": 4
+      },
+      "id": 39,
+      "interval": "1d",
+      "links": [],
+      "options": {},
+      "pageSize": null,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "No. of Build",
+          "colorMode": "value",
+          "colors": [
+            "#FF9830",
+            "#FADE2A",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 0,
+          "pattern": "count",
+          "thresholds": [
+            "5",
+            "10"
+          ],
+          "type": "number",
+          "unit": "none"
+        }
+      ],
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "build_exec_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/^$folder$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Frequency Of The Build",
+      "transform": "table",
+      "type": "table"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "InfluxDB",
+      "format": "s",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 19,
+        "y": 4
+      },
+      "id": 4,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "build_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  " / 1000"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/^$folder$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "title": "Avg Build Duration For Selected Job",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
     },
     {
       "cacheTimeout": null,
       "datasource": "InfluxDB",
       "gridPos": {
-        "h": 4,
-        "w": 7,
-        "x": 17,
-        "y": 4
+        "h": 5,
+        "w": 12,
+        "x": 0,
+        "y": 12
+      },
+      "id": 18,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "decimals": 2,
+            "mappings": [],
+            "max": 1,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
+            "title": "",
+            "unit": "none"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.5.2",
+      "targets": [
+        {
+          "alias": "Total",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "tests_total"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/^$folder$/"
+            }
+          ]
+        },
+        {
+          "alias": "Skipped",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "tests_skipped"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/^$folder$/"
+            }
+          ]
+        },
+        {
+          "alias": "Failed",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "tests_failed"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/^$folder$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Latest Unit Test Result For Selected Job",
+      "type": "bargauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "InfluxDB",
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 12,
+        "y": 12
       },
       "id": 24,
       "links": [],
@@ -807,7 +1370,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Latest Coverage Result",
+      "title": "Latest Coverage Result For Selected Job",
       "type": "bargauge"
     },
     {
@@ -818,7 +1381,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 17
       },
       "id": 14,
       "links": [],
@@ -998,7 +1561,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Detail",
+      "title": "Details For Selected Job",
       "transform": "timeseries_to_columns",
       "type": "table"
     },
@@ -1009,7 +1572,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 24
       },
       "id": 20,
       "panels": [],
@@ -1028,7 +1591,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 8,
@@ -1095,7 +1658,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Build Duration",
+      "title": "Build Duration For Selected Job",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1139,7 +1702,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 32
       },
       "id": 22,
       "panels": [],
@@ -1154,7 +1717,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 33
       },
       "id": 17,
       "links": [],
@@ -1329,7 +1892,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Unit Test Result",
+      "title": "Unit Test Result For Selected Job",
       "transform": "timeseries_to_columns",
       "type": "table"
     },
@@ -1341,7 +1904,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 40
       },
       "id": 25,
       "links": [],
@@ -1552,12 +2115,12 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Jacoco Result",
+      "title": "Jacoco Result For Selected Job",
       "transform": "timeseries_to_columns",
       "type": "table"
     }
   ],
-  "refresh": "",
+  "refresh": false,
   "schemaVersion": 21,
   "style": "dark",
   "tags": [
@@ -1571,8 +2134,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "petclinic/feature-influxdb-grafana",
-          "value": "petclinic/feature-influxdb-grafana"
+          "tags": [],
+          "text": "petclinic/feature-1",
+          "value": "petclinic/feature-1"
         },
         "datasource": "InfluxDB",
         "definition": "select project_path from jenkins_data",
@@ -1627,5 +2191,5 @@
   "timezone": "",
   "title": "Jenkins Build Metrics",
   "uid": "000000005",
-  "version": 38
+  "version": 86
 }
